@@ -1,0 +1,6 @@
+{
+    "require": {
+        "react/socket": "^1.2.0",
+        "kevinlebrun/colors.php": "^1.0"
+    }
+}
