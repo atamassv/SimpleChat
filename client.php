@@ -13,6 +13,33 @@ $connector = new Connector($loop);
 $connector->connect('127.0.0.1:8000')
     ->then(
         function(ConnectionInterface $connection) use ($input, $output){
+    
+            /** 
+             *EXAMPLE 1
+            */
+
+            /*
+            $input->on('data', function ($data) use ($connection) {
+                $connection->write($data);
+            });
+            $connection->on('data', function ($data) use ($output) {
+                $output->write($data);
+            });
+            */
+
+            /**
+             *EXAMPLE 2
+            */
+
+            /*
+            $input->pipe($connection);
+            $connection->pipe($output);
+            */
+
+            /**
+             * EXAMPLE 3
+            */
+            
             $input->pipe($connection)->pipe($output);
         },
         function(Exception $exception){
