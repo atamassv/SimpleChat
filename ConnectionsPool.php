@@ -53,7 +53,7 @@ class ConnectionsPool
                 if ($tagetConnection) {
                     $tagetConnection->write((new Color("PM|$name:"))->bold()->fg('magenta') . " $data");
                 } else {
-                    $connection->write((new Color("The user " . $targetName . " is offline!\n"))->fg('magenta'));
+                    $connection->write((new Color("The user " . $targetName . " is offline!\n"))->fg('red'));
                 }
             } else {
                 $this->sendAll((new Color("$name:"))->bold() . " $data", $connection);
