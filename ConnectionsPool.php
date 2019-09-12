@@ -76,7 +76,7 @@ class ConnectionsPool
      */
     private function getNameFromString($data)
     {
-        preg_match("/" . $this->pmConstant . "\s([^\s]+)\s/", $data, $name);
+        preg_match("/" . $this->pmConstant . "\s*(\S+)/", $data, $name);
 
         if (isset($name[1])) {
             return trim($name[1]);
